@@ -15,10 +15,27 @@ const toStation = document.getElementById('to');
 const problemStation = document.getElementById('problem-station');
 const problemIssue = document.getElementById('problem-issue');
 
-// Update Dashboard
+// Update Dashboard and Progress Bar
 function updateDashboard(action) {
   pointsDisplay.innerText = points;
   lastActionDisplay.innerText = action;
+  updateProgressBar();
+}
+
+function updateProgressBar() {
+  const progressBar = document.getElementById('progress-bar');
+  const maxPoints = 500;
+  const percent = Math.min((points / maxPoints) * 100, 100);
+
+  progressBar.style.width = `${percent}%`;
+
+  if (percent < 30) {
+    progressBar.style.background = 'red';
+  } else if (percent < 70) {
+    progressBar.style.background = 'orange';
+  } else {
+    progressBar.style.background = 'green';
+  }
 }
 
 // Problem Report Form
@@ -61,22 +78,7 @@ greenerForm.addEventListener('submit', (e) => {
   }
 });
 
-// Redeem Rewards
-const redeemButtons = document.querySelectorAll('.redeem-btn');
-redeemButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const cost = parseInt(button.getAttribute('data-cost'));
-    const rewardName = button.getAttribute('data-reward');
-
-    if (points >= cost) {
-      points -= cost;
-      updateDashboard(`Redeemed: ${rewardName} (-${cost} points)`);
-      alert(`Congratulations! You redeemed a ${rewardName}! 🎉`);
-    } else {
-      alert(`Not enough points to redeem ${rewardName}. Keep earning! 🚇`);
-    }
-  });
-});
+// Redeem Rewards (using event delegation)
 const rewardsCatalog = document.getElementById('rewards-catalog');
 rewardsCatalog.addEventListener('click', (e) => {
   if (e.target.classList.contains('redeem-btn')) {
@@ -92,34 +94,3 @@ rewardsCatalog.addEventListener('click', (e) => {
     }
   }
 });
-function updateDashboard(action) {
-  pointsDisplay.innerText = points;
-  lastActionDisplay.innerText = action;
-  updateProgressBar();
-}
-
-// New function to update progress bar
-function updateProgressBar() {
-  const progressBar = document.getElementById('progress-bar');
-  
-  // Example: Assume 500 points = full bar
-  const maxPoints = 500; 
-  const percent = Math.min((points / maxPoints) * 100, 100); // Cap at 100%
-  
-  progressBar.style.width = `${percent}%`;
-}
-function updateProgressBar() {
-  const progressBar = document.getElementById('progress-bar');
-  const maxPoints = 500; 
-  const percent = Math.min((points / maxPoints) * 100, 100);
-
-  progressBar.style.width = `${percent}%`;
-
-  if (percent < 30) {
-    progressBar.style.background = 'red';
-  } else if (percent < 70) {
-    progressBar.style.background = 'orange';
-  } else {
-    progressBar.style.background = 'green';
-  }
-}
