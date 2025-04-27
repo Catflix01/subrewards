@@ -1,0 +1,132 @@
+  body {
+    font-family: cursive;
+    margin: 0;
+    padding: 0;
+    background: #f5f7fa;
+    color: #333;
+  }
+  
+  header {
+    background-color: #00897b;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+  
+  main {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  /* Dashboard Section */
+ /* Dashboard Section */
+section {
+  background: white;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 
+    0 2px 4px rgba(30, 206, 62, 0.89),
+    0 8px 16px rgba(30, 206, 62, 0.89); /* Removed the extra comma */
+  border: 1px solid #e0e0e0;
+}
+
+}
+  }
+  
+  h2 {
+    margin-top: 0;
+    color: #00695c;
+  }
+  
+  h3 {
+    margin-top: 1rem;
+    color: #00796b;
+  }
+  
+  #progress-container {
+    margin-top: 20px;
+  }
+  
+  #progress-container label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  #progress-container div {
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 20px;
+    width: 100%;
+  }
+  
+  #progress-bar {
+    background: green;
+    height: 100%;
+    width: 0%;
+    transition: width 0.4s ease-in-out, background 0.4s ease-in-out;
+  }
+  
+  /* Forms */
+  form {
+    margin-top: 1rem;
+  }
+  
+  label {
+    display: block;
+    margin: 0.5rem 0 0.25rem;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  button[type="submit"],
+  .redeem-btn {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 0.5rem;
+  }
+  
+  button[type="submit"]:hover,
+  .redeem-btn:hover {
+    background-color: #004d40;
+  }
+  
+  /* Rewards */
+  #rewards-catalog li {
+    margin: 1rem 0;
+    list-style: none;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #004d40;
+    color: white;
+    margin-top: 2rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    main {
+      padding: 1rem;
+    }
+  
+    button[type="submit"],
+    .redeem-btn {
+      width: 100%;
+    }

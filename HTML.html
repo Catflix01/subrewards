@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Subway Rewards</title>
+</head>
+<body>
+
+<header>
+  <h1>Subway Rewards Program</h1>
+  <p>Earn points for traveling smarter and greener!</p>
+</header>
+
+<main>
+
+  <section>
+    <h2>Your Dashboard</h2>
+    <p><strong>Points:</strong> <span id="points">0</span></p>
+    <p><strong>Last Action:</strong> <span id="last-action">None</span></p>
+    <div id="progress-container" style="margin-top: 20px;">
+        <label>Points Progress:</label>
+        <div style="background: #eee; border-radius: 10px; overflow: hidden; height: 20px; width: 100%;">
+          <div id="progress-bar" style="background: green; height: 100%; width: 0%; transition: width 0.3s;"></div>
+        </div>
+      </div>
+  </section>
+
+  <section>
+    <h2>🌟Earn Points</h2>
+
+    <h3>❗Report a Problem</h3>
+    <form id="problem-form">
+      <label for="problem-station">Station:</label>
+      <input type="text" id="problem-station" required>
+      <label for="problem-issue">Issue:</label>
+      <input type="text" id="problem-issue" required>
+      <button type="submit">Submit Problem</button>
+    </form>
+
+    <h3>Off-Peak Travel</h3>
+    <form id="offpeak-form">
+      <label for="station-unique">Station:</label>
+      <input type="text" id="station-unique" required>
+      <label for="time-unique">Time:</label>
+      <input type="text" id="time-unique" required>
+      <button type="submit">Submit Off-Peak</button>
+    </form>
+
+    <h3>🍀Greener Route</h3>
+    <form id="greener-form">
+      <label for="from">From:</label>
+      <input type="text" id="from" required>
+      <label for="to">To:</label>
+      <input type="text" id="to" required>
+      <button type="submit">Submit Greener Route</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>How It Works</h2>
+    <p>Every time you travel during off-peak hours, select eco-friendly routes, or help us by reporting issues, you earn points. Points can later be redeemed for rewards!</p>
+  </section>
+ 
+  
+  <section>
+    <h2>Rewards Catalog</h2>
+    <ul id="rewards-catalog">
+      <li>🚇Free Ride - 100 Points <button class="redeem-btn" data-cost="100" data-reward="Free Ride">Redeem</button></li>
+      <li>🪪Discounted Monthly Pass - 500 Points <button class="redeem-btn" data-cost="500" data-reward="Discounted Monthly Pass">Redeem</button></li>
+      <li>🍃-Friendly Tote Bag - 300 Points <button class="redeem-btn" data-cost="300" data-reward="Eco-Friendly Tote Bag">Redeem</button></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>© Ayaan Patel</p>
+</footer>
+</body>
+</html>
